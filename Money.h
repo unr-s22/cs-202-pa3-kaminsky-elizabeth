@@ -39,7 +39,7 @@ public:
 
 	//overload of << operator initialization
 	friend std::ostream& operator <<(std::ostream &os, const Money &money);
-	
+
 	//an all_cents function initialization
 	int all_cents() const;
 

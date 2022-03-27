@@ -19,7 +19,7 @@ bool Money::operator<(const Money &rhs) const{
 
 //checks if one value is greater than another by converting both to cent values and comparing those
 bool Money::operator >(const Money &rhs) const{
-	return all_cents() < rhs.all_cents();
+	return all_cents() > rhs.all_cents();
 };
 
 //checks if one value is less than or equal to another by converting both to cent values and comparing those
@@ -51,14 +51,14 @@ Money Money::operator +(const Money &rhs) const{
 	}
 	else{
 	}
-	
+
 	Money total (dollarTotal, centTotal); //set a Money type variable to the result
 	return total; //return that variable
 };
 
 
 //- operator overload. This could result in a negative, I don't know if that's an issue
-Money Money::operator -(const Money &rhs) const{	
+Money Money::operator -(const Money &rhs) const{
 	int fullTotal = all_cents() - rhs.all_cents(); //convert both to cent values and subtract
 	int centTotal = fullTotal % 100; //pull out the cent value using modulo
 	int dollarTotal = (fullTotal - centTotal)*0.01; //convert the remainder back to dollars
